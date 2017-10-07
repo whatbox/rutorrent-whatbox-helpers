@@ -1,0 +1,5 @@
+plugin.description: Various Whatbox specific enhancements to rutorrent
+plugin.author: Whatbox Inc.
+plugin.version: 0.1
+need_rtorrent: 0
+plugin.help: https://whatbox.ca/support
