@@ -1,7 +1,7 @@
 <?php
 require_once( dirname(__FILE__)."/../../php/util.php" );
 
-$theSettings->registerPlugin("whatbox");
+$theSettings->registerPlugin("whatbox-helpers");
 
 $Home = '/home/'.posix_getpwuid(posix_geteuid())['name'];
 
