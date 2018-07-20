@@ -3,8 +3,11 @@ require_once( dirname(__FILE__)."/../../php/util.php" );
 
 $theSettings->registerPlugin("whatbox-helpers");
 
-$XDG_CONFIG_DIR = '/config/'.posix_getpwuid(posix_geteuid())['name'];
-
+if (is_dir('/config')) {
+    $XDG_CONFIG_DIR = '/config/'.posix_getpwuid(posix_geteuid())['name'];
+} else {
+    $XDG_CONFIG_DIR = '/home/'.posix_getpwuid(posix_geteuid())['name'].'/.config';
+}
 // rutorrent can't load if the $XDG_CONFIG_DIR is unreadable, so we can't provide a nice error for that case
 
 if (!is_readable($XDG_CONFIG_DIR.'/rtorrent/socket')) {
