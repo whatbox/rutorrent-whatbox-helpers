@@ -23,7 +23,22 @@ theWebUI.checkDaemon = function(){
 		dataType : "json"
 	}).done(function(json){
 		if (json.client_running === false) {
-			askYesNo("Restart rtorrent","Your rtorrent daemon appears to be offline. Would you like us to start it for you?", "theWebUI.restartDaemon()");
+			askYesNo("Restart rtorrent", "Your rtorrent daemon appears to be offline. Would you like us to start it for you?", "theWebUI.restartDaemon()");
+		}
+	});
+}
+
+theWebUI.checkDownloadLimit = function(){
+	$.ajax({
+		type: "GET",
+		timeout: theWebUI.settings["webui.reqtimeout"],
+		async : true,
+		cache: false,
+		url : "/api/download_limit",
+		dataType : "json"
+	}).done(function(json){
+		if (json !== 0) {
+			noty("whatbox: Your download speed has been throttled because you are over your storage allocation.", 'alert');
 		}
 	});
 }
@@ -45,6 +60,7 @@ plugin.init = function() {
 		this.addSeparatorToToolbar("bunnybutton");
 
 		theWebUI.checkDaemon();
+		theWebUI.checkDownloadLimit();
 	}
 };
 
