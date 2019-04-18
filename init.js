@@ -18,7 +18,9 @@ theWebUI.addSettings({
 
 
 // Help users migrate away from rutorrent-magnetic
+theWebUI.addSettings({'webui.register_magnet': 1});
 theWebUI.registerMagnetHandler();
+theWebUI.addSettings({'webui.register_magnet': 0});
 
 theWebUI.restartDaemon = function(){
 	$.ajax({
