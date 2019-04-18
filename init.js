@@ -16,6 +16,10 @@ theWebUI.addSettings({
     'webui.ignore_timeouts': 1,
 });
 
+
+// Help users migrate away from rutorrent-magnetic
+theWebUI.registerMagnetHandler();
+
 theWebUI.restartDaemon = function(){
 	$.ajax({
 		type: "POST",
