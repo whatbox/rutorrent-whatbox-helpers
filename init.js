@@ -16,6 +16,16 @@ theWebUI.addSettings({
     'webui.ignore_timeouts': 1,
 });
 
+// Disable pushbullet column by default, but
+// still respect a users choice to enable it
+theWebUI.tables.trt.columns.origPush = theWebUI.tables.trt.columns.push;
+theWebUI.tables.trt.columns.push = function (values) {
+    if (values.id === 'pushbullet') {
+        values.enabled = false;
+    }
+    return this.origPush(values);
+}
+
 theWebUI.restartDaemon = function(){
 	$.ajax({
 		type: "POST",
