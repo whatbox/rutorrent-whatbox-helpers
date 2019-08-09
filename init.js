@@ -30,9 +30,10 @@ theWebUI.restartDaemon = function(){
 	$.ajax({
 		type: "POST",
 		timeout: theWebUI.settings["webui.reqtimeout"],
-		async : true,
+		async: true,
 		cache: false,
-		url : "/api/rtorrent_restart",
+		url: "/api/restart",
+		data: {"app": "rtorrent"},
 		dataType : "json"
 	}).done(function(){
 		location.reload();
