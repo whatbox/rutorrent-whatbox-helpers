@@ -4,6 +4,10 @@ require_once( '../../php/settings.php' );
 
 header('Content-type: text/plain');
 ?>
+PHP Facts
+---------
+Version: <?=phpversion()?>  
+
 ruTorrent Facts
 ---------------
 Running User: <?=posix_getpwuid(posix_geteuid())['name']?>  
