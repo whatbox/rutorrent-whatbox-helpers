@@ -15,7 +15,8 @@ User: <?=getUser()?>
 Settings: <?=getSettingsPath()?>  
 SCGI Port: <?=$scgi_port?>  
 SCGI Host: <?=$scgi_host?>  
-Local Mode: <?=(isLocalMode()?'true':'false')?>  
+Local Mode: <?=(isLocalMode() ? 'true' : 'false')?>  
+Diagnostic Mode: <?=($do_diagnostic ? 'true' : 'false')?>  
 
 rTorrent Facts
 --------------

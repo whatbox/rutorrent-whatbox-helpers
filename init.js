@@ -88,6 +88,19 @@ plugin.init = function() {
 
 		theWebUI.checkDaemon();
 		theWebUI.checkDownloadLimit();
+
+		// Every 20 minutes do an API no-op so the server knows the session is still active
+		// Server only records activity every 15 minutes, so we want to be above that
+		// Normally this would be handled by the disk_usage checks, but we disable
+		// those to save battery life when a tab is in the background
+		fetch('/api/noop', {
+			 credentials: 'include',
+		});
+		setInterval(function () {
+			fetch('/api/noop', {
+				credentials: 'include',
+			});
+		}, 1200000);
 	}
 };
 
