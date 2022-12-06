@@ -112,9 +112,9 @@ plugin.onRemove = function() {
 plugin.init();
 
 
-$(document).ajaxComplete(function(e, xhr, opts){
-	if (typeof xhr.responseURL !== 'undefined') console.log(xhr.responseURL);
-	if (xhr.getResponseHeader('X-Whatbox') === 'logout'){
+$(document).ajaxComplete(function(e, jqXHR, opts){
+	// https://github.com/jquery/jquery/issues/4339
+	if (jqXHR.getResponseHeader('X-Whatbox') === 'login'){
 		window.location = '/login';
 	}
 });
