@@ -5,6 +5,6 @@ div#t a#mnu_bunnybutton:hover {
 }
 
 div#bunnybutton {
-	background: transparent url(./images/logo.svg) no-repeat 0 center;
+	background: transparent url(./images/logo.min.svg) no-repeat 0 center;
 	width: 40px;
 }
