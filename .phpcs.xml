@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="PSR12">
+    <config name="testVersion" value="8.1-"/>
+    <arg name="extensions" value="php"/>
+    <arg name="ignore" value="vendor/"/>
+    <arg name="colors" />
+    <arg value="sp"/>
+    <rule ref="PSR12">
+        <exclude name="Generic.Files.LineLength.TooLong" />
+    </rule>
+    <rule ref="Generic.PHP.RequireStrictTypes" />
+    <rule ref="Generic.PHP.DisallowShortOpenTag" />
+</ruleset>

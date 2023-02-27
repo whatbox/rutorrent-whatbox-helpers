@@ -1,0 +1,9 @@
+{
+    "name": "whatbox/rutorrent-whatbox-helpers",
+    "description": "Misc Whatbox functionality for ruTorrent",
+    "license": "GPL-3.0-or-later",
+    "require": {
+        "sentry/sdk": "*"
+    }
+
+}
