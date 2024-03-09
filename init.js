@@ -5,11 +5,6 @@ plugin.loadMainCSS();
 // Modify the default settings, but
 // still respect user customization
 theWebUI.addSettings({
-	// The labelsize option causes issues
-	// for users with high torrent counts
-	// and can still be enabled manually
-	'webui.show_labelsize': 0,
-
 	// Timeouts generally occur when rtorrent
 	// is busy. Yet if we tell the user that a
 	// timeout has occurred, they're more likely
