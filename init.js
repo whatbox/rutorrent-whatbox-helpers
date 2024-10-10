@@ -80,7 +80,7 @@ plugin.init = function() {
 			var offs = $('#bunnybutton').offset();
 			theContextMenu.show(offs.left-5,offs.top+5+$('#plugins').height());
 		};
-		this.addButtonToToolbar('bunnybutton','Whatbox...','theWebUI.showBunnyMenu()','bunnybutton');
+		this.addButtonToToolbar('bunnybutton','Whatbox','theWebUI.showBunnyMenu()','bunnybutton');
 		this.addSeparatorToToolbar('bunnybutton');
 
 		theWebUI.checkDaemon();
