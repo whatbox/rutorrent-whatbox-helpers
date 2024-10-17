@@ -11,6 +11,10 @@ theWebUI.addSettings({
 	// to hit the refresh button, overloading
 	// rTorrent further.
 	'webui.ignore_timeouts': 1,
+
+	// A lot of users got a minimum of 280 set during ruTorrent 5.0
+	// override to the new default of 200
+	'webui.side_panel_min_width': 200,
 });
 
 // Disable pushbullet column by default, but
